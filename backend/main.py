@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="iTriangle Data Analyzer",
-    version="0.1.0"
+    version="1.0.0"
 )
 
 app.add_middleware(
@@ -16,15 +16,8 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    return {
-        "message": "iTriangle Data Analyzer API",
-        "status": "running"
-    }
+    return {"message": "iTriangle Data Analyzer Backend"}
 
-
-@app.get("/api/health")
+@app.get("/health")
 def health():
-    return {
-        "status": "success",
-        "message": "Backend is running successfully"
-    }
+    return {"status": "healthy"}
